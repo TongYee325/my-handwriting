@@ -1,0 +1,4 @@
+interface:
+  display_name: "我的字迹手写作业"
+  short_description: "参考本人的扫描笔迹生成各科手写作答，按需采用自然的局部笔误订正并导出PDF"
+  default_prompt: "使用 $my-handwriting，参考我的笔迹完成附件中的作业并导出 PDF。"
