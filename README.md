@@ -2,9 +2,19 @@
 
 一个带有个人笔迹参考的 **Codex Skill**：根据题目或现成答案，制作接近本人书写风格的手写页，并合成为 PDF。
 
-两张真实手写扫描样本随技能保存，换对话时可继续使用。支持公式、矩阵、中文说明、证明和图表；科目、题号、语言和版式由本次任务决定。
+用户认可的行草样本与两张原始手写扫描随技能保存，换对话时可继续使用。默认采用快速行草，以认可样本为首要风格参考，原始扫描辅助补充数字、字母及数学笔形。支持公式、矩阵、中文说明、证明和图表；科目、题号、语言、署名和版式由本次任务决定。
+
+默认正文和公式末尾不写句号，以换行或留白分隔；保留小数点、题号及数学符号。当次任务的明确要求优先。
 
 ## 效果展示
+
+### 认可的行草笔迹参考
+
+[![快速行草笔迹参考](assets/approved-cursive.png)](assets/approved-cursive.png)
+
+此页用于参考字形、连笔、运笔和纸张风格。新作答的课程、正文与署名均取自本次任务，标点按上述偏好处理。
+
+### 完整作答示例
 
 以下为此前使用图像生成工具制作的《现代控制 Quiz 2》作答，共 **3 页**。点击图片可查看原图。
 
@@ -17,7 +27,7 @@
 <details>
 <summary>展开查看原始个人笔迹参考</summary>
 
-两张参考图来自本人的手写作业扫描，用于提供字形、运笔、间距和纸张风格。
+两张参考图来自本人的手写作业扫描，作为个人数字、字母及数学笔形的辅助参考。
 
 | 参考页 1 | 参考页 2 |
 | --- | --- |
@@ -90,8 +100,8 @@ git clone https://github.com/TongYee325/my-handwriting.git "${CODEX_HOME:-$HOME/
 ## 工作方式
 
 1. 读取本次题目或答案，整理正确内容并按篇幅分页。
-2. 查看随附笔迹样本，以样本为风格参考逐页生成图像。
-3. 对照内容核对符号、矩阵、上下标和正文，需要时局部修正。
+2. 查看认可的行草样本，按需结合原始扫描，以样本为风格参考逐页生成图像。
+3. 对照内容核对符号、矩阵、上下标、正文和句末标点，需要时局部修正。
 4. 将选定页图合成 PDF；程序运行结果等已有 PDF 可以顺序追加。
 
 图像由当前环境的 `imagegen` 技能与内置图像生成工具制作。字迹相似度及公式细节受每次生成影响，成品需要逐页核对。单独运行 PDF 脚本时，输入应为已生成的页面图片。
@@ -125,7 +135,8 @@ python scripts/assemble_pdf.py --images examples/quiz2/page01.png examples/quiz2
 my-handwriting/
 ├── SKILL.md                     技能入口与制作流程
 ├── agents/openai.yaml           Codex 展示信息
-├── assets/reference-01.png      真实笔迹参考
+├── assets/approved-cursive.png  认可的行草笔迹，首要风格参考
+├── assets/reference-01.png      原始手写扫描，辅助参考
 ├── assets/reference-02.png
 ├── references/style-profile.md  字迹特征与局部订正规则
 ├── references/prompting.md      生成、局部编辑与清理提示词
@@ -137,4 +148,4 @@ my-handwriting/
 
 ## 使用自己的笔迹
 
-替换 `assets/reference-01.png` 和 `assets/reference-02.png`，再按新样本调整 `references/style-profile.md` 中的字形、笔压、间距和布局描述。保留资源文件名后，现有技能入口和提示词仍可继续使用。
+将认可的笔迹效果保存为 `assets/approved-cursive.png`，原始扫描保存为 `assets/reference-01.png` 和 `assets/reference-02.png`，再按新样本调整 `references/style-profile.md` 中的字形、笔压、间距和布局描述。保留资源文件名后，现有技能入口和提示词仍可继续使用。

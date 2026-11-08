@@ -4,17 +4,18 @@
 
 ## 新作答页
 
-参考图应先被图像查看工具加载。把技能目录下两张原始参考图的绝对路径传给生成工具，明确它们仅用于笔迹与纸张风格。
+先用图像查看工具加载 `assets/approved-cursive.png`，将其绝对路径作为首要风格参考；需要补充数学笔形时，再查看并传入两张原始扫描。逐个说明参考图角色，课程、署名和正文只使用本次内容。
 
 ```text
 Use case: scientific-educational.
 Asset type: one A4 portrait handwritten assignment answer sheet.
-Input images: Images 1 and 2 are ONLY personal-handwriting and paper-style references, not edit targets. Use only the NEW page content below for the answers.
+Input images: Image 1 is the user's approved fast-cursive handwriting and paper-style reference, not an edit target. Any additional original scans are auxiliary references for personal letter, digit and mathematical pen forms. Use only the NEW page content below for the answers, course and identity.
 
-Style: {从style-profile.md提取本次风格；保持细黑笔、自然随手与可读性。}
+Style: {从style-profile.md提取本次风格；默认快速行草、明确自然连笔、略向右斜，保持细黑笔与可读性。}
 Composition: {按本页内容指定单栏/松散双栏/图文分区及阅读顺序。} Full sheet, flat scan, white paper, all content within safe margins.
 Text and mathematics: {本页完整正确正文，按小问次序。LaTeX仅描述公式，应画成实际手写数学符号。}
 Corrections: {根据本次模式填入下节的指令。}
+Punctuation: Omit sentence-ending full stops and periods after prose and formulas. Keep decimal points, exercise numbering and all meaningful mathematical dot symbols. Use line breaks or spacing to separate statements.
 Accuracy: preserve every required step, symbol, sign, index, matrix entry, vector orientation, unit and conclusion. Include the entire specified content; do not mix in text from the reference pages.
 ```
 
