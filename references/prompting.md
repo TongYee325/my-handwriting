@@ -15,7 +15,7 @@ Style: {从style-profile.md提取本次风格；默认快速行草、明确自�
 Composition: {按本页内容指定单栏/松散双栏/图文分区及阅读顺序。} Full sheet, flat scan, white paper, all content within safe margins.
 Text and mathematics: {本页完整正确正文，按小问次序。LaTeX仅描述公式，应画成实际手写数学符号。}
 Corrections: {根据本次模式填入下节的指令。}
-Punctuation: Omit sentence-ending full stops and periods after prose and formulas. Keep decimal points, exercise numbering and all meaningful mathematical dot symbols. Use line breaks or spacing to separate statements.
+Punctuation: Do not generate the Chinese full stop '。' anywhere on the answer page, or an English period '.' used as a sentence terminator. This applies to prose and formula endings. Preserve decimal points, exercise numbering, mathematical multiplication dots, dot products, time-derivative dots and ellipses. Never erase the digit 0 or letter o as punctuation. Separate statements using line breaks, spacing, commas or semicolons.
 Accuracy: preserve every required step, symbol, sign, index, matrix entry, vector orientation, unit and conclusion. Include the entire specified content; do not mix in text from the reference pages.
 ```
 
